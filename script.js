@@ -53,22 +53,4 @@
   /* ---- Footer year ---- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  /* ---- Register form (front-end demo handling) ---- */
-  var form = document.getElementById("registerForm");
-  var note = document.getElementById("formNote");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      var name = document.getElementById("name").value.trim();
-      note.textContent =
-        "// Received, " + (name || "investigator") + ". We'll follow up with registration details.";
-      note.classList.add("ok");
-      form.reset();
-    });
-  }
 })();
