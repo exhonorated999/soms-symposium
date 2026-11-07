@@ -560,9 +560,23 @@ ul { list-style: none; }
 
 .accred__cards { display: grid; gap: 20px; }
 .accred__card {
+  position: relative;
   background: var(--panel); border: 1px solid var(--line);
   border-top: 2px solid var(--cyan); border-radius: var(--radius);
   padding: 30px 28px;
+}
+.accred__card--new { border-top-color: var(--amber); }
+.accred__card--new h3 { padding-right: 130px; }
+.accred__ribbon {
+  position: absolute; top: 16px; right: 16px;
+  font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--amber-bri); border: 1px solid var(--amber);
+  padding: 4px 10px; border-radius: 40px; background: rgba(255,140,26,0.08);
+  box-shadow: 0 0 12px rgba(255,140,26,0.25);
+}
+@media (max-width: 680px) {
+  .accred__card--new h3 { padding-right: 0; }
+  .accred__ribbon { position: static; display: inline-block; margin-bottom: 12px; }
 }
 .accred__state {
   font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
