@@ -92,8 +92,13 @@
             names on a slide deck. Real cases. Real workflows. Real results.
           </p>
 
+          <a href="#register" class="hero__event reveal" data-delay="2">
+            <span class="announce__pulse"></span>
+            <span class="mono">REGISTRATION OPEN · AUG 17–20, 2027 · FONTANA, CA</span>
+          </a>
+
           <div class="hero__cta reveal" data-delay="3">
-            <a href="#register" class="btn btn--primary">Secure Your Seat</a>
+            <a href="#register" class="btn btn--primary">Register Now</a>
             <a href="#curriculum" class="btn btn--ghost">See the Curriculum</a>
           </div>
 
@@ -783,7 +788,7 @@
 
       <div class="pricing">
         <article class="price reveal">
-          <div class="price__tag mono">Early Registration</div>
+          <div class="price__tag mono">Early Bird · Through May 1, 2027</div>
           <div class="price__amount"><span class="price__cur">$</span>500<span class="price__per">/ person</span></div>
           <ul class="clist">
             <li>Full 4-day symposium access</li>
@@ -792,11 +797,11 @@
             <li>All step-by-step resources</li>
           </ul>
           <a href="#register" class="btn btn--primary btn--full">Register Early</a>
-          <p class="price__note mono">Best value · limited window</p>
+          <p class="price__note mono">Best value · ends May 1, 2027</p>
         </article>
 
         <article class="price price--std reveal" data-delay="1">
-          <div class="price__tag mono">Standard Registration</div>
+          <div class="price__tag mono">Standard · After May 1, 2027</div>
           <div class="price__amount"><span class="price__cur">$</span>600<span class="price__per">/ person</span></div>
           <ul class="clist">
             <li>Full 4-day symposium access</li>
@@ -804,41 +809,143 @@
             <li>Hindsight + choice of V.I.P.E.R. or Oversight</li>
             <li>All step-by-step resources</li>
           </ul>
-          <a href="#register" class="btn btn--ghost btn--full">Register Standard</a>
+          <a href="#register" class="btn btn--ghost btn--full">Request an Invoice</a>
           <p class="price__note mono">Standard rate</p>
         </article>
       </div>
 
       <div class="announce reveal">
         <span class="announce__pulse"></span>
-        <span class="mono">2027 COURSE ANNOUNCEMENTS — COMING SOON</span>
+        <span class="mono">NEXT CLASS: AUGUST 17–20, 2027 · FONTANA POLICE DEPARTMENT · FONTANA, CA</span>
       </div>
     </section>
 
     <!-- ============ REGISTER CTA ============ -->
     <section class="cta" id="register">
-      <div class="cta__inner reveal">
+      <div class="cta__inner cta__inner--wide reveal">
         <span class="kicker mono">Registration</span>
         <h2>Stop Attending Infomercials.<br />Start Training.</h2>
 
         <div class="cta__banner">
           <span class="announce__pulse"></span>
-          <span class="mono">2027 DATES &amp; LOCATIONS — COMING SOON</span>
+          <span class="mono">REGISTRATION NOW OPEN — AUGUST 17–20, 2027</span>
         </div>
 
         <p>
-          Online registration will open right here the moment the 2027 schedule is
-          set. Paying by check? Request an invoice now and we'll get your agency
-          squared away.
+          Seats are limited to 60. Reserve your agency's seats today, pay by card
+          below or request an invoice to pay by check.
         </p>
 
-        <div class="cta__actions">
-          <a
-            class="btn btn--primary"
-            href="mailto:justin@intellect-le.com?subject=SOMS%202027%20Invoice%20Request%20(Pay%20by%20Check)&body=Please%20send%20an%20invoice%20for%20the%20Sex%20Offender%20Management%20Symposium.%0D%0A%0D%0AName%3A%0D%0AAgency%20%2F%20Department%3A%0D%0ARole%3A%0D%0ANumber%20of%20Attendees%3A%0D%0APhone%3A%0D%0A"
-          >Request an Invoice</a>
+        <!-- Event details -->
+        <div class="event">
+          <div class="event__item">
+            <span class="event__label mono">Dates</span>
+            <span class="event__value">August 17–20, 2027</span>
+            <span class="event__sub mono">4 days of instruction</span>
+          </div>
+          <div class="event__item">
+            <span class="event__label mono">Location</span>
+            <span class="event__value">Fontana Police Department</span>
+            <a class="event__sub mono" href="https://www.google.com/maps/search/?api=1&query=17005+Upland+Ave+Fontana+CA+92336" target="_blank" rel="noopener">17005 Upland Ave. · Fontana, CA 92336 ↗</a>
+          </div>
+          <div class="event__item">
+            <span class="event__label mono">Tuition</span>
+            <span class="event__value">$500 Early Bird</span>
+            <span class="event__sub mono">Through May 1, 2027 · $600 after</span>
+          </div>
         </div>
-        <p class="cta__formnote mono">// Pay by check · justin@intellect-le.com</p>
+
+        <!-- Two ways to register -->
+        <div class="regopts">
+          <!-- Pay by card -->
+          <div class="regcard regcard--primary" id="cardReg">
+            <div class="regcard__head">
+              <span class="regcard__step mono">Option A</span>
+              <h3>Pay by Credit Card</h3>
+              <p>Tell us who's attending, then complete payment securely through Stripe.</p>
+            </div>
+
+            <form class="regform" id="regForm" novalidate>
+              <div class="regform__grid">
+                <div class="field field--full">
+                  <label for="rfAgency">Agency / Department *</label>
+                  <input id="rfAgency" name="agency" type="text" required autocomplete="organization" />
+                </div>
+                <div class="field">
+                  <label for="rfContact">Point of Contact *</label>
+                  <input id="rfContact" name="contact_name" type="text" required autocomplete="name" />
+                </div>
+                <div class="field">
+                  <label for="rfEmail">Contact Email *</label>
+                  <input id="rfEmail" name="contact_email" type="email" required autocomplete="email" />
+                </div>
+                <div class="field field--full">
+                  <label for="rfPhone">Contact Phone</label>
+                  <input id="rfPhone" name="contact_phone" type="tel" autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="attendees">
+                <div class="attendees__head">
+                  <span class="mono">Attendees</span>
+                  <span class="attendees__count mono" id="attCount">1 seat</span>
+                </div>
+                <div id="attList"></div>
+                <button type="button" class="btn btn--ghost btn--sm attendees__add" id="attAdd">+ Add Attendee</button>
+              </div>
+
+              <!-- honeypot (spam trap) -->
+              <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+              <div class="regform__total">
+                <span class="mono">Total due (Early Bird)</span>
+                <span class="regform__amount" id="attTotal">$500</span>
+              </div>
+
+              <label class="ack">
+                <input type="checkbox" id="rfAck" required />
+                <span>I have read and agree to the <a href="#refund">no-refund / seat-transfer policy</a>.</span>
+              </label>
+
+              <button type="submit" class="btn btn--primary btn--full" id="rfSubmit">Continue to Secure Payment →</button>
+              <p class="cta__formnote" id="rfNote">You'll be redirected to Stripe. Set the quantity at checkout to match your number of attendees.</p>
+            </form>
+
+            <div class="regclosed" id="ebClosed" hidden>
+              <p class="mono">EARLY BIRD REGISTRATION HAS ENDED</p>
+              <p>Standard registration is $600 per person. Request an invoice and we'll get your agency set up.</p>
+            </div>
+          </div>
+
+          <!-- Pay by check -->
+          <div class="regcard">
+            <div class="regcard__head">
+              <span class="regcard__step mono">Option B</span>
+              <h3>Pay by Check</h3>
+              <p>Need an invoice for your agency? Email us with your attendee list and we'll send one over.</p>
+            </div>
+            <a
+              class="btn btn--ghost btn--full"
+              id="invoiceBtn"
+              href="mailto:justin@intellect-le.com?subject=SOMS%20Aug%2017-20%2C%202027%20(Fontana%2C%20CA)%20-%20Invoice%20Request&body=Please%20send%20an%20invoice%20for%20the%20Sex%20Offender%20Management%20Symposium%2C%20August%2017-20%2C%202027%20at%20Fontana%20PD.%0D%0A%0D%0AAgency%20%2F%20Department%3A%0D%0APoint%20of%20Contact%3A%0D%0APhone%3A%0D%0A%0D%0AAttendees%20(Name%20-%20Email)%3A%0D%0A1.%20%0D%0A2.%20%0D%0A"
+            >Request an Invoice</a>
+            <p class="cta__formnote mono">// justin@intellect-le.com</p>
+          </div>
+        </div>
+
+        <!-- Refund policy -->
+        <div class="policy" id="refund">
+          <h3 class="mono">Cancellation &amp; Refund Policy</h3>
+          <p>
+            Due to instructor travel and expenses committed for registered attendees,
+            <strong>all registrations are non-refundable.</strong>
+          </p>
+          <ul class="clist">
+            <li>If an attendee cannot make it, the seat may be <strong>transferred to another member of the same agency</strong>.</li>
+            <li>Or, the attendee may <strong>attend another training date the following year at no additional cost</strong>.</li>
+            <li>Registered attendees <strong>keep access to their free choice of Oversight or Project V.I.P.E.R. software</strong> either way.</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
