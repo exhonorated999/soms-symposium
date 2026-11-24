@@ -84,8 +84,10 @@
     event: "SOMS — August 17-20, 2027 — Fontana Police Department, Fontana, CA",
     price: 500,
     stripeUrl: "https://buy.stripe.com/4gM3cuekk1zafsigzO33W0d",
-    // FormSubmit.co emails each registration to this address (no backend needed).
-    notifyUrl: "https://formsubmit.co/ajax/justin@intellect-le.com",
+    // Web3Forms emails each registration to the inbox tied to this access key.
+    // (Access keys are designed to be public / client-side.)
+    notifyUrl: "https://api.web3forms.com/submit",
+    web3formsKey: "d4a57204-67d6-4ca2-a227-243ff3c11c39",
     // Early bird ends end of day May 1, 2027 (Pacific).
     earlyBirdEnds: new Date("2027-05-02T00:00:00-07:00")
   };
@@ -209,10 +211,10 @@
       }).join("\n");
 
       var payload = {
-        _subject: "New SOMS Registration (" + seats + " seat" + (seats === 1 ? "" : "s") + ") — " + agency.value.trim() + " — " + ref,
-        _template: "table",
-        _captcha: "false",
-        _replyto: email.value.trim(),
+        access_key: REG.web3formsKey,
+        subject: "New SOMS Registration (" + seats + " seat" + (seats === 1 ? "" : "s") + ") — " + agency.value.trim() + " — " + ref,
+        from_name: "SOMS Registration",
+        replyto: email.value.trim(),
         "Reference ID": ref,
         "Event": REG.event,
         "Payment Method": "Credit card (Stripe) — Early Bird $" + REG.price + "/person",
