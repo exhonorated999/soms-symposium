@@ -54,6 +54,29 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---- Payment option picker (collapsed until selected) ---- */
+  var payOpts = document.querySelectorAll(".paypick__opt");
+  var selectPay = function (which, toggle) {
+    payOpts.forEach(function (btn) {
+      var panel = document.getElementById(btn.getAttribute("aria-controls"));
+      var isTarget = btn.getAttribute("data-pay") === which;
+      var open = isTarget && !(toggle && btn.getAttribute("aria-expanded") === "true");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (panel) panel.hidden = !open;
+    });
+  };
+  payOpts.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      selectPay(btn.getAttribute("data-pay"), true);
+    });
+  });
+  // Pricing-card buttons jump to Register with the matching option open
+  document.querySelectorAll("[data-open-pay]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      selectPay(a.getAttribute("data-open-pay"), false);
+    });
+  });
+
   /* =======================================================
      2027 REGISTRATION — attendee capture + Stripe handoff
      ======================================================= */

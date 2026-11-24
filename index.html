@@ -796,7 +796,7 @@
             <li>Hindsight + choice of V.I.P.E.R. or Oversight</li>
             <li>All step-by-step resources</li>
           </ul>
-          <a href="#register" class="btn btn--primary btn--full">Register Early</a>
+          <a href="#register" class="btn btn--primary btn--full" data-open-pay="card">Register Early</a>
           <p class="price__note mono">Best value · ends May 1, 2027</p>
         </article>
 
@@ -809,7 +809,7 @@
             <li>Hindsight + choice of V.I.P.E.R. or Oversight</li>
             <li>All step-by-step resources</li>
           </ul>
-          <a href="#register" class="btn btn--ghost btn--full">Request an Invoice</a>
+          <a href="#register" class="btn btn--ghost btn--full" data-open-pay="check">Request an Invoice</a>
           <p class="price__note mono">Standard rate</p>
         </article>
       </div>
@@ -855,16 +855,25 @@
           </div>
         </div>
 
-        <!-- Two ways to register -->
-        <div class="regopts">
-          <!-- Pay by card -->
-          <div class="regcard regcard--primary" id="cardReg">
-            <div class="regcard__head">
-              <span class="regcard__step mono">Option A</span>
-              <h3>Pay by Credit Card</h3>
-              <p>Tell us who's attending, then complete payment securely through Stripe.</p>
-            </div>
+        <!-- Two ways to register: pick one to expand -->
+        <p class="paypick__prompt mono">Select a payment option to continue</p>
+        <div class="paypick">
+          <button type="button" class="paypick__opt" data-pay="card" aria-expanded="false" aria-controls="payCard">
+            <span class="regcard__step mono">Option A</span>
+            <span class="paypick__title">Pay by Credit Card</span>
+            <span class="paypick__desc">List your attendees, then pay securely through Stripe.</span>
+            <span class="paypick__chev" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="paypick__opt" data-pay="check" aria-expanded="false" aria-controls="payCheck">
+            <span class="regcard__step mono">Option B</span>
+            <span class="paypick__title">Pay by Check</span>
+            <span class="paypick__desc">Request an invoice for your agency.</span>
+            <span class="paypick__chev" aria-hidden="true"></span>
+          </button>
+        </div>
 
+        <!-- Pay by card panel -->
+        <div class="regcard regcard--primary paypanel" id="payCard" hidden>
             <form class="regform" id="regForm" novalidate>
               <div class="regform__grid">
                 <div class="field field--full">
@@ -915,22 +924,20 @@
               <p class="mono">EARLY BIRD REGISTRATION HAS ENDED</p>
               <p>Standard registration is $600 per person. Request an invoice and we'll get your agency set up.</p>
             </div>
-          </div>
+        </div>
 
-          <!-- Pay by check -->
-          <div class="regcard">
-            <div class="regcard__head">
-              <span class="regcard__step mono">Option B</span>
-              <h3>Pay by Check</h3>
-              <p>Need an invoice for your agency? Email us with your attendee list and we'll send one over.</p>
-            </div>
+        <!-- Pay by check panel -->
+        <div class="regcard paypanel" id="payCheck" hidden>
+            <p class="paypanel__text">
+              Email us your agency details and attendee list and we'll send an invoice
+              your agency can pay by check.
+            </p>
             <a
-              class="btn btn--ghost btn--full"
+              class="btn btn--primary btn--full"
               id="invoiceBtn"
               href="mailto:justin@intellect-le.com?subject=SOMS%20Aug%2017-20%2C%202027%20(Fontana%2C%20CA)%20-%20Invoice%20Request&body=Please%20send%20an%20invoice%20for%20the%20Sex%20Offender%20Management%20Symposium%2C%20August%2017-20%2C%202027%20at%20Fontana%20PD.%0D%0A%0D%0AAgency%20%2F%20Department%3A%0D%0APoint%20of%20Contact%3A%0D%0APhone%3A%0D%0A%0D%0AAttendees%20(Name%20-%20Email)%3A%0D%0A1.%20%0D%0A2.%20%0D%0A"
             >Request an Invoice</a>
             <p class="cta__formnote mono">// justin@intellect-le.com</p>
-          </div>
         </div>
 
         <!-- Refund policy -->
