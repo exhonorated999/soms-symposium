@@ -748,6 +748,15 @@ ul { list-style: none; }
   box-shadow: 0 0 12px var(--amber); animation: blink 1.4s ease-in-out infinite;
 }
 
+.flyer-link { margin: 18px 0 0; }
+.cta .flyer-link { display: flex; justify-content: center; margin: 0 0 34px; }
+.flyer-link .btn {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+  max-width: 100%;
+}
+
 /* =========================================================
    REGISTER CTA
    ========================================================= */
@@ -939,6 +948,7 @@ a.event__sub:hover { color: var(--cyan-bri); }
   .event { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
+  .flyer-link .btn { width: 100%; }
   .regform__grid { grid-template-columns: 1fr; }
   .att { grid-template-columns: 22px 1fr 36px; }
   .att input[type="email"] { grid-column: 2 / 3; }
