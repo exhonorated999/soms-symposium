@@ -205,6 +205,23 @@ ul { list-style: none; }
 }
 .btn--ghost:hover { border-color: var(--cyan); box-shadow: var(--glow-cyan); transform: translateY(-2px); color: var(--cyan-bri); }
 
+.btn--flyer {
+  background: linear-gradient(135deg, var(--amber-bri), var(--amber));
+  color: #1a0d00;
+  border-color: transparent;
+  box-shadow: 0 0 18px rgba(255, 140, 26, 0.28);
+}
+.btn--flyer:hover {
+  background: linear-gradient(135deg, #ffd7a3, var(--amber-bri));
+  color: #1a0d00;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(255, 140, 26, 0.5);
+}
+.btn--flyer:focus-visible {
+  outline: 2px solid var(--amber-bri);
+  outline-offset: 3px;
+}
+
 /* =========================================================
    HERO
    ========================================================= */
